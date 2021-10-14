@@ -4,6 +4,6 @@ Procedure to produce Octomap using T265 & D415 and interface with Pixhawk
 
     https://github.com/IntelRealSense/librealsense
 
-2) To link Pixhawk and T265, Auterion package acts as bridge, which provides odometry data. Follow the steps to install Auterion package from the below link
+2) To link Pixhawk and T265 use Auterion package which acts as bridge, which provides odometry data. Follow the steps to install Auterion package from the below link
 
     https://github.com/Auterion/VIO
