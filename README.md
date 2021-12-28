@@ -7,3 +7,28 @@ Procedure to produce Octomap using T265 & D415 and interface with Pixhawk
 2) To link Pixhawk and T265 use Auterion package which acts as bridge, which provides odometry data. Follow the steps to install Auterion package from the below link
 
     https://github.com/Auterion/VIO
+    
+## How To Run
+
+1. Terminal 1st:-
+```bash
+cd catkin_ws
+source devel/setup.bash
+roslaunch px4_realsense_bridge bridge_px4.launch
+```
+2. Terminal 2nd:-
+```bash
+cd catkin_fastplanner/
+source devel/setup.bash
+roslaunch Fastplanner MappingDrone.launch 
+```
+Note:-
+In bridge_px4.launch:
+It launches mavros px4.launch - binary installed in our pc/ edit launch file if source installed
+then it also launches bridge.launch - contains necessary tf and launches t265 and d415 cameras
+
+In MappingDrone.launch:
+it contains pubcampose - maintains dynamic tf between map and base_link
+also downsamples using pcl manager
+Launches octomap server
+and launches rviz - octomap, camera pointcloud, tf
