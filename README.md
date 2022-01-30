@@ -8,21 +8,23 @@ Procedure to produce Octomap using T265 & D415 and interface with Pixhawk
 
     https://github.com/Auterion/VIO
     
-## How To Run
+## How To Run Hardware
 
-1. Terminal 1st:-
+### Terminal 1:-
 ```bash
 cd catkin_ws
 source devel/setup.bash
 roslaunch px4_realsense_bridge bridge_px4.launch
 ```
-2. Terminal 2nd:-
+
+### Terminal 2:-
 ```bash
 cd catkin_fastplanner/
 source devel/setup.bash
 roslaunch Fastplanner MappingDrone.launch 
 ```
-Note:-
+
+### Note:-
 In bridge_px4.launch:
 It launches mavros px4.launch - binary installed in our pc/ edit launch file if source installed
 then it also launches bridge.launch - contains necessary tf and launches t265 and d415 cameras
@@ -32,3 +34,6 @@ it contains pubcampose - maintains dynamic tf between map and base_link
 also downsamples using pcl manager
 Launches octomap server
 and launches rviz - octomap, camera pointcloud, tf
+### Mapping Demo:-
+
+![](https://github.com/Garuda-IIITH-RRC/Octomap-using-T265-and-D415-/blob/main/t265_d415.gif)
